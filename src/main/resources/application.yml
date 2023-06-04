@@ -1,7 +1,32 @@
 server:
   port: 8081
+
 spring:
   security:
     user:
       name: lip31
-      password: 1234
+      password: 123
+  datasource:
+    url: jdbc:mysql://localhost:6606/litools?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: litools-pool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 2000000
+      connection-test-query: SELECT 1
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
