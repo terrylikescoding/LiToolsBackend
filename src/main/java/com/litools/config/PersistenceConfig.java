@@ -18,7 +18,6 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"com.litools.entity"})
 public class PersistenceConfig {
 
     @Value("${spring.datasource.url}")
